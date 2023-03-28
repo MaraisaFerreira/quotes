@@ -8,6 +8,8 @@ const conn = require('./db/conn');
 const User = require('./models/User');
 const Quote = require('./models/Quote');
 
+const quotesRouter = require('./routes/quotesRouter');
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -47,6 +49,8 @@ app.use((req, res, next) => {
 
 	next();
 });
+
+app.use('/', quotesRouter);
 
 conn.sync().then(() => {
 	console.log('Conectado ao DB...');
