@@ -5,6 +5,8 @@ const flash = require('express-flash');
 const FileStore = require('session-file-store')(session);
 
 const conn = require('./db/conn');
+const User = require('./models/User');
+const Quote = require('./models/Quote');
 
 const app = express();
 
