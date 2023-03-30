@@ -4,11 +4,14 @@ const session = require('express-session');
 const flash = require('express-flash');
 const FileStore = require('session-file-store')(session);
 
+/* DB */
 const conn = require('./db/conn');
 const User = require('./models/User');
 const Quote = require('./models/Quote');
 
+/* Rotas */
 const quotesRouter = require('./routes/quotesRouter');
+const authRouter = require('./routes/authRouter');
 
 const app = express();
 
@@ -51,6 +54,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/', quotesRouter);
+app.use('/', authRouter);
 
 conn.sync().then(() => {
 	console.log('Conectado ao DB...');
