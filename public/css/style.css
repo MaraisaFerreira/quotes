@@ -51,9 +51,81 @@ img.logo {
 /* container */
 .container {
 	display: flex;
+	flex-direction: column;
 
 	padding: 2em;
 	min-height: 60vh;
+}
+
+.message {
+	color: #117be5;
+	background-color: #cce5ff;
+	border-radius: 5px;
+	border: 1px solid #117be5;
+	padding: 1em;
+	text-align: center;
+	margin: 0 auto 2em;
+	width: 60%;
+}
+
+/* Forms */
+.auth-container {
+	max-width: 450px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.auth-container h2 {
+	color: #fff;
+
+	margin-bottom: 1em;
+	padding: 0.3em;
+	width: 100px;
+	border-left: 4px solid var(--accent);
+}
+
+.auth-container a {
+	color: var(--accent);
+}
+
+.form-control {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1em;
+}
+
+.form-control label {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+.form-control input,
+.form-control textarea {
+	padding: 7px;
+	border-radius: 5px;
+	border: 1px solid var(--accent);
+}
+
+form input[type='submit'],
+.btn {
+	background-color: transparent;
+	color: var(--accent);
+	padding: 0.5em 1.2em;
+	border: 2px solid var(--accent);
+	border-radius: 5px;
+	margin-bottom: 1em;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+form input[type='submit']:hover,
+.btn:hover {
+	color: #fff;
+	background-color: var(--accent);
 }
 
 /* footer */

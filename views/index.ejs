@@ -4,7 +4,10 @@
 	<body>
 		<%- include('partials/_nav.ejs') %>
 
-		<div class="container"></div>
+		<div class="container">
+			<% if (messages.message) { %> <%- include('partials/_messages.ejs') %> <%
+			} %>
+		</div>
 
 		<%- include('partials/_footer.ejs') %>
 	</body>

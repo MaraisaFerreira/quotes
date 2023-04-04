@@ -6,12 +6,20 @@
 		<li>
 			<a href="/">Citações</a>
 		</li>
-		<!-- TODO routes -->
+		<% if (session.userid) { %>
+		<li>
+			<a href="/dashboard">Dashboard</a>
+		</li>
+		<li>
+			<a href="/logout">Sair</a>
+		</li>
+		<% } else { %>
 		<li>
 			<a href="/login">Login</a>
 		</li>
 		<li>
 			<a href="/register">Cadastrar</a>
 		</li>
+		<% } %>
 	</ul>
 </nav>
