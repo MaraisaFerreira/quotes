@@ -5,8 +5,8 @@
 		<%- include('../partials/_nav.ejs') %>
 
 		<div class="container">
-			<% if (messages.message) { %> <%- include('partials/_messages.ejs') %> <%
-			} %>
+			<% if (messages.message) { %> <%- include('../partials/_messages.ejs') %>
+			<% } %>
 			<div class="auth-container">
 				<h2>Login</h2>
 				<form action="/login" method="post">
