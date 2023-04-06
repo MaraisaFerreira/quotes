@@ -107,6 +107,28 @@ img.logo {
 	border: 1px solid var(--accent);
 }
 
+.add-form-container a {
+	color: var(--accent);
+}
+
+.add-form-container a:hover {
+	color: #fff;
+}
+
+.add-form-container h1 {
+	margin: 1em 0;
+	padding: 0.3em;
+	border-left: 4px solid var(--accent);
+}
+
+.add-form-container form {
+	max-width: 30%;
+}
+
+.add-form-container label {
+	display: none;
+}
+
 form input[type='submit'],
 .btn {
 	background-color: transparent;

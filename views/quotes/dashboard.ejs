@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../partials/_head.ejs', {title: 'Dashboard'}) %>
+	<body>
+		<%- include('../partials/_nav.ejs') %>
+
+		<div class="container">
+			<div class="dashboard">
+				<div class="title-container">
+					<h2>Dashboard</h2>
+				</div>
+				<a href="/quotes/add" class="btn">Add Citação</a>
+			</div>
+			<h3>Suas Citações</h3>
+		</div>
+
+		<%- include('../partials/_footer.ejs') %>
+	</body>
+</html>
