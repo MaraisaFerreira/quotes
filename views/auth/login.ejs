@@ -7,6 +7,31 @@
 		<div class="container">
 			<% if (messages.message) { %> <%- include('partials/_messages.ejs') %> <%
 			} %>
+			<div class="auth-container">
+				<h2>Login</h2>
+				<form action="/login" method="post">
+					<div class="form-control">
+						<label for="email">Email: </label>
+						<input
+							type="email"
+							name="email"
+							placeholder="Digite seu email..."
+							required
+						/>
+					</div>
+					<div class="form-control">
+						<label for="password">Senha: </label>
+						<input
+							type="password"
+							name="password"
+							placeholder="Digite a senha..."
+							required
+						/>
+					</div>
+					<input type="submit" value="Entrar" />
+				</form>
+				<p>Não tem uma conta? <a href="/register">Click Aqui</a></p>
+			</div>
 		</div>
 
 		<%- include('../partials/_footer.ejs') %>
