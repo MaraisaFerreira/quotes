@@ -6,8 +6,12 @@ module.exports = class QuoteController {
 		res.render('index');
 	}
 
-	static async showDashboard(req, res) {
-		res.render('quotes/dashboard');
+	static showDashboard(req, res) {
+		Quote.findAll({ where: { UserId: req.session.userid }, raw: true })
+			.then((quotes) => {
+				res.render('quotes/dashboard', { quotes });
+			})
+			.catch((err) => console.log(err));
 	}
 
 	static addQuote(req, res) {
