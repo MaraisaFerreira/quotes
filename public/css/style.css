@@ -150,6 +150,71 @@ form input[type='submit']:hover,
 	background-color: var(--accent);
 }
 
+/* dashboard */
+.title-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title-container h2 {
+	padding: 0.3em;
+	border-left: 4px solid var(--accent);
+}
+
+.dashboard h3 {
+	margin: 1.5em 0;
+}
+
+.dashboard .main {
+	display: flex;
+	flex-direction: column;
+}
+
+.dashboard .main .label {
+	color: var(--accent);
+}
+
+.dashboard .main .label {
+	font-size: 1.3em;
+	font-weight: bold;
+
+	color: #fff;
+}
+
+.dashboard .main .author {
+	margin-top: 12px;
+}
+
+.dashboard .main .label-author:nth-child(2) {
+	color: var(--accent);
+}
+
+.dashboard ul {
+	list-style: none;
+}
+
+.dashboard li {
+	padding: 12px;
+	border-bottom: 1px solid var(--accent);
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dashboard li .action {
+	display: flex;
+}
+
+.dashboard li .action .btn {
+	color: #fff;
+	border: 2px solid #fff;
+}
+
+.dashboard li .action .btn:nth-child(1) {
+	margin-right: 12px;
+}
+
 /* footer */
 footer {
 	display: flex;

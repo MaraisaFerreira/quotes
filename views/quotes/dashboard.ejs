@@ -8,10 +8,37 @@
 			<div class="dashboard">
 				<div class="title-container">
 					<h2>Dashboard</h2>
+					<a href="/quotes/add" class="btn">Add Citação</a>
 				</div>
-				<a href="/quotes/add" class="btn">Add Citação</a>
+				<h3>Suas Citações</h3>
+				<ul>
+					<% quotes.map(quote => { %>
+					<li>
+						<div class="main">
+							<span class="label"><%= quote.title %></span>
+							<% if(quote.author) { %>
+							<div class="author">
+								<span class="label-author">Autor: </span>
+								<span class="label-author"><%= quote.author %></span>
+							</div>
+							<% } %>
+						</div>
+						<span class="action">
+							<a href="/" class="btn">Editar</a>
+							<form action="/" method="post">
+								<input
+									type="hidden"
+									name="quote_id"
+									,
+									value="<%= quote.id %>"
+								/>
+								<input type="submit" class="btn" value="Excluir" />
+							</form>
+						</span>
+					</li>
+					<% }) %>
+				</ul>
 			</div>
-			<h3>Suas Citações</h3>
 		</div>
 
 		<%- include('../partials/_footer.ejs') %>
