@@ -46,6 +46,21 @@ module.exports = class QuoteController {
 			.catch((err) => console.log(err));
 	}
 
+	static editQuotePost(req, res) {
+		const id = req.params.id;
+		const quoteEdited = {
+			title: req.body.quote,
+			author: req.body.author,
+		};
+
+		Quote.update(quoteEdited, { where: { id } })
+			.then(() => {
+				req.flash('message', 'Citação editada com sucesso!');
+				res.redirect('/dashboard');
+			})
+			.catch((err) => console.log(err));
+	}
+
 	static removeQuote(req, res) {
 		const id = req.body.quote_id;
 
