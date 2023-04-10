@@ -3,7 +3,12 @@ const Quote = require('../models/Quote');
 
 module.exports = class QuoteController {
 	static showAllQuotes(req, res) {
-		res.render('index');
+		Quote.findAll({ include: User, raw: true, nest: true })
+			.then((quotes) => {
+				console.log(quotes);
+				res.render('index', { quotes });
+			})
+			.catch((err) => console.log(err));
 	}
 
 	static showDashboard(req, res) {

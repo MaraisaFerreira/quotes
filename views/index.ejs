@@ -7,6 +7,20 @@
 		<div class="container">
 			<% if (messages.message) { %> <%- include('partials/_messages.ejs') %> <%
 			} %>
+			<div class="home-header">
+				<h1>Citações</h1>
+			</div>
+			<div class="quotes-container">
+				<% quotes.forEach(quote => { %>
+				<figure>
+					<blockquote><%= quote.title %></blockquote>
+					<% if(quote.author) {%>
+					<figcaption>Autor: <%= quote.author %></figcaption>
+					<%} %>
+					<figcaption>por: <%= quote.User.name %></figcaption>
+				</figure>
+				<% }) %>
+			</div>
 		</div>
 
 		<%- include('partials/_footer.ejs') %>
