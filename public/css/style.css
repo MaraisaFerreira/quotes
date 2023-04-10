@@ -150,6 +150,97 @@ form input[type='submit']:hover,
 	background-color: var(--accent);
 }
 
+/* home */
+.home-header {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	max-width: 60%;
+	margin: 0 auto;
+}
+
+.home-header h1 {
+	margin-bottom: 1em;
+}
+
+.home-header span {
+	color: var(--accent);
+}
+
+.home-header p,
+.home-header form {
+	margin-bottom: 1.2em;
+}
+
+.home-header input {
+	border: none;
+	border-bottom: 1px solid #fff;
+	padding: 0.5em;
+	margin-right: 1.5em;
+}
+
+.home-header input[type='text'] {
+	width: 60%;
+}
+
+.order-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 80%;
+	margin: 0 auto 1em;
+}
+
+.order-container a {
+	color: #fff;
+}
+
+.order-container form {
+	margin: 0;
+}
+
+.order-container button {
+	border: none;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+
+.order-container i:hover,
+.order-container a:hover {
+	color: var(--accent);
+}
+
+.order-container i,
+.order-container a,
+.order-container button {
+	margin: 0 7px;
+}
+
+.quotes-container figure {
+	border-bottom: 1px solid #333;
+	padding: 0.5em;
+	max-width: 50%;
+	margin: 0 auto 1em;
+}
+
+.quotes-container blockquote {
+	font-style: italic;
+	font-size: 2em;
+}
+
+.quotes-container .info {
+	display: flex;
+	margin-top: 0.5em;
+}
+
+.quotes-container .info span {
+	color: var(--accent);
+}
+
+.quotes-container .info span:nth-child(1) {
+	margin-right: 2em;
+}
+
 /* dashboard */
 .title-container {
 	display: flex;

@@ -15,6 +15,7 @@
 						<input type="submit" value="Buscar" class="btn" />
 					</form>
 					<div class="order-container">
+						<span>Ordenar por:</span>
 						<form action="/" method="get">
 							<input type="hidden" name="search" />
 							<input type="hidden" name="order" value="new" />
@@ -33,10 +34,12 @@
 				<% quotes.forEach(quote => { %>
 				<figure>
 					<blockquote><%= quote.title %></blockquote>
-					<% if(quote.author) {%>
-					<figcaption>Autor: <%= quote.author %></figcaption>
-					<%} %>
-					<figcaption>por: <%= quote.User.name %></figcaption>
+					<div class="info">
+						<% if(quote.author) {%>
+						<figcaption>Autor: <span><%= quote.author %></span></figcaption>
+						<%} %>
+						<figcaption>por:<span> <%= quote.User.name %></span></figcaption>
+					</div>
 				</figure>
 				<% }) %>
 			</div>
