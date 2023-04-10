@@ -7,8 +7,27 @@
 		<div class="container">
 			<% if (messages.message) { %> <%- include('partials/_messages.ejs') %> <%
 			} %>
-			<div class="home-header">
-				<h1>Citações</h1>
+			<div class="form-container">
+				<div class="home-header">
+					<h1>Citações</h1>
+					<form action="/" method="get">
+						<input type="text" name="search" placeholder="Buscar" />
+						<input type="submit" value="Buscar" class="btn" />
+					</form>
+					<div class="order-container">
+						<form action="/" method="get">
+							<input type="hidden" name="search" />
+							<input type="hidden" name="order" value="new" />
+							<button type="submit"><i class="bi bi-arrow-up"></i></button>
+						</form>
+						<form action="/" method="get">
+							<input type="hidden" name="search" />
+							<input type="hidden" name="order" value="older" />
+							<button type="submit"><i class="bi bi-arrow-down"></i></button>
+						</form>
+						<a href="/">Limpar</a>
+					</div>
+				</div>
 			</div>
 			<div class="quotes-container">
 				<% quotes.forEach(quote => { %>
