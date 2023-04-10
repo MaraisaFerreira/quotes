@@ -5,6 +5,8 @@
 		<%- include('../partials/_nav.ejs') %>
 
 		<div class="container">
+			<% if (messages.message) { %> <%- include('../partials/_messages.ejs') %>
+			<% } %>
 			<div class="dashboard">
 				<div class="title-container">
 					<h2>Dashboard</h2>
@@ -25,13 +27,8 @@
 						</div>
 						<span class="action">
 							<a href="/" class="btn">Editar</a>
-							<form action="/" method="post">
-								<input
-									type="hidden"
-									name="quote_id"
-									,
-									value="<%= quote.id %>"
-								/>
+							<form action="/quotes/remove" method="post">
+								<input type="hidden" name="quote_id" value="<%= quote.id %>" />
 								<input type="submit" class="btn" value="Excluir" />
 							</form>
 						</span>

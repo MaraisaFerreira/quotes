@@ -5,6 +5,8 @@
 		<%- include('../partials/_nav.ejs') %>
 
 		<div class="container">
+			<% if (messages.message) { %> <%- include('../partials/_messages.ejs') %>
+			<% } %>
 			<div class="add-form-container">
 				<a href="/dashboard">Voltar</a>
 				<h1>Add Citação</h1>
