@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include('../partials/_head.ejs', {title: 'Add Quote'}) %>
+	<body>
+		<%- include('../partials/_nav.ejs') %>
+
+		<div class="container">
+			<% if (messages.message) { %> <%- include('../partials/_messages.ejs') %>
+			<% } %>
+			<div class="add-form-container">
+				<a href="/dashboard">Voltar</a>
+				<h1>Editar Citação</h1>
+				<form action="/quotes/edit/<%= quote.id %>" method="post">
+					<div class="form-control">
+						<label for="quote">Citação:</label>
+						<textarea
+							name="quote"
+							cols="30"
+							rows="10"
+							placeholder="Add sua citação..."
+						>
+<%= quote.title %></textarea
+						>
+					</div>
+					<div class="form-control">
+						<label for="author">Autor</label>
+						<input
+							type="text"
+							name="author"
+							placeholder="Autor"
+							value="<%= quote.author %>"
+						/>
+					</div>
+					<input type="submit" value="Salvar" />
+				</form>
+			</div>
+		</div>
+
+		<%- include('../partials/_footer.ejs') %>
+	</body>
+</html>

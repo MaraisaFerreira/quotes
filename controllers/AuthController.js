@@ -69,7 +69,6 @@ module.exports = class AuthController {
 		User.create(user)
 			.then((user) => {
 				req.session.userid = user.id;
-				console.log(req.session);
 
 				req.flash('message', 'Cadastro registrado com sucesso!');
 

@@ -46,9 +46,6 @@ app.use(
 
 //set session to res
 app.use((req, res, next) => {
-	console.log('User id:', req.session.userid);
-	console.log('Session:', req.session);
-
 	res.locals.session = req.session;
 
 	next();

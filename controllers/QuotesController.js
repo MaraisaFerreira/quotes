@@ -36,9 +36,18 @@ module.exports = class QuoteController {
 			.catch((err) => console.log(err));
 	}
 
+	static editQuote(req, res) {
+		const id = req.params.id;
+
+		Quote.findOne({ where: { id }, raw: true })
+			.then((quote) => {
+				res.render('quotes/edit', { quote });
+			})
+			.catch((err) => console.log(err));
+	}
+
 	static removeQuote(req, res) {
 		const id = req.body.quote_id;
-		console.log('ID -> ', id);
 
 		Quote.destroy({ where: { id } })
 			.then(() => {
