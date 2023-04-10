@@ -10,7 +10,8 @@
 			<div class="add-form-container">
 				<a href="/dashboard">Voltar</a>
 				<h1>Editar Citação</h1>
-				<form action="/quotes/edit/<%= quote.id %>" method="post">
+				<form action="/quotes/edit" method="post">
+					<input type="hidden" name="id" value="<%= quote.id %>" />
 					<div class="form-control">
 						<label for="quote">Citação:</label>
 						<textarea

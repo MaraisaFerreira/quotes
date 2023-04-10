@@ -47,10 +47,10 @@ module.exports = class QuoteController {
 	}
 
 	static editQuotePost(req, res) {
-		const id = req.params.id;
+		const { id, quote, author } = req.body;
 		const quoteEdited = {
-			title: req.body.quote,
-			author: req.body.author,
+			title: quote,
+			author,
 		};
 
 		Quote.update(quoteEdited, { where: { id } })
