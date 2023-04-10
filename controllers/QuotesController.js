@@ -35,4 +35,18 @@ module.exports = class QuoteController {
 			})
 			.catch((err) => console.log(err));
 	}
+
+	static removeQuote(req, res) {
+		const id = req.body.quote_id;
+		console.log('ID -> ', id);
+
+		Quote.destroy({ where: { id } })
+			.then(() => {
+				req.session.save(() => {
+					req.flash('message', 'Citação removida com sucesso!');
+					res.redirect('/dashboard');
+				});
+			})
+			.catch((err) => console.log(err));
+	}
 };
