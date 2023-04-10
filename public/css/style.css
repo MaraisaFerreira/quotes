@@ -85,7 +85,7 @@ img.logo {
 	border-left: 4px solid var(--accent);
 }
 
-.auth-container a {
+.container a {
 	color: var(--accent);
 }
 
