@@ -10,11 +10,17 @@ module.exports = class QuoteController {
 			search = req.query.search;
 		}
 
+		let order = 'DESC';
+		if (req.query.order) {
+			order = req.query.order === 'new' ? 'DESC' : 'ASC';
+		}
+
 		Quote.findAll({
 			include: User,
 			raw: true,
 			nest: true,
 			where: { title: { [Op.like]: `%${search}%` } },
+			order: [['createdAt', order]],
 		})
 			.then((quotes) => {
 				console.log(quotes);
