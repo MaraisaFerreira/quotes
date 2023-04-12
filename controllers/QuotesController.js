@@ -1,12 +1,24 @@
 const User = require('../models/User');
 const Quote = require('../models/Quote');
 
+const { Op } = require('sequelize');
+
 module.exports = class QuoteController {
 	static showAllQuotes(req, res) {
-		Quote.findAll({ include: User, raw: true, nest: true })
+		let search = '';
+		if (req.query.search) {
+			search = req.query.search;
+		}
+
+		Quote.findAll({
+			include: User,
+			raw: true,
+			nest: true,
+			where: { title: { [Op.like]: `%${search}%` } },
+		})
 			.then((quotes) => {
 				console.log(quotes);
-				res.render('index', { quotes });
+				res.render('index', { quotes, search });
 			})
 			.catch((err) => console.log(err));
 	}
